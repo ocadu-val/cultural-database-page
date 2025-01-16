@@ -1,0 +1,151 @@
+---
+import Card from "../components/card.astro";
+import Member from "../components/member.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <main class="w-screen p-2">
+      <section class="w-full mx-auto">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div class="max-w-screen-lg text-gray-500 sm:text-lg">
+            <h1 class="mb-8 text-4xl tracking-tight font-bold text-gray-900">
+              About Us
+            </h1>
+            <h2 class="mb-8 text-2xl tracking-tight font-bold text-gray-900">
+              Project Background
+            </h2>
+            <p class="mb-8 font-light">
+              Building a Data Fluent Canadian Cultural Sector emerged from a
+              collaboration between OCAD University and SynapseC as part of the
+              Data Echo Culture initiative. This collaboration revealed a
+              significant gap in the availability and accessibility of cultural
+              data across Canada. Efforts to locate researchers, datasets, and
+              organizations were fragmented, underscoring the need for a
+              centralized and organized resource.
+            </p>
+            <p class="mb-8 font-light">
+              This project addresses the gap by adopting a forensic approach to
+              identify datasets, their creators, and associated metadata. It
+              sees cultural data not only as information but also as a tool for
+              cross-disciplinary collaboration, this project lays the groundwork
+              for a robust cultural data ecosystem that can adapt to
+              technological advancements and sectoral needs
+            </p>
+            <p class="mb-8 font-light">
+              The Canadian Cultural Data Catalog is the center piece to this
+              initiative, it is a “Database of datasets” that lists all
+              available Canadian cultural datasets in a broad range of arts
+              disciplines and from organizations of every level. The catalogue
+              provides deeply detailed and descriptive metadata information,
+              enabling collaboration and laying the foundation for a unified
+              governance framework. By connecting artists, researchers,
+              organizations, and policymakers with a comprehensive catalog of
+              cultural datasets, we aim to address fragmentation and empower the
+              cultural sector to make informed decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="w-full mx-auto">
+        <div class="px-4 mx-auto max-w-screen-xl lg:px-6">
+          <h2 class="mb-2 text-2xl tracking-tight font-bold text-gray-900">
+            Our Objectives
+          </h2>
+        </div>
+        <div
+          class="flex flex-col md:grid md:grid-cols-3 gap-8 pb-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6"
+        >
+          <Card title="Cataloging Cultural Data">
+            <p>
+              Identify, describe, document, and organize cultural datasets from
+              across Canada, encompassing diverse sectors and practices.
+            </p>
+          </Card>
+          <Card title="Promoting Collaboration">
+            <p>
+              Connect researchers, organizations, and policymakers to foster
+              cross-disciplinary partnerships.
+            </p>
+          </Card>
+          <Card title="Building Data Literacy">
+            <p>
+              Equip the cultural sector with the tools and knowledge needed to
+              understand, analyze, and utilize data effectively.
+            </p>
+          </Card>
+          <Card title="Establishing Governance Standards">
+            <p>
+              Develop a shared governance framework that emphasizes ethical
+              stewardship and Indigenous data sovereignty, adhering to OCAP and
+              CARE principles.
+            </p>
+          </Card>
+          <Card title="Enhancing Discoverability">
+            <p>
+              Use innovative metadata structures and visualization tools to
+              improve the accessibility and usability of cultural datasets.
+            </p>
+          </Card>
+        </div>
+      </section>
+      <section class="w-full mx-auto">
+        <div
+          class="flex flex-col md:flex-row gap-8 py-8 px-4 mx-auto max-w-screen-xl lg:pb-16 lg:px-6"
+        >
+          <div
+            class="w-full h-72 p-4 flex flex-col border border-solid border-gray-900 rounded-lg"
+          >
+            <b class="text-xl font-bold">Mission</b>
+            <p>
+              To empower the Canadian cultural sector with a comprehensive,
+              accessible, and ethically governed catalog of cultural datasets,
+              enabling data-driven decision-making and fostering collaboration
+              across disciplines and regions.
+            </p>
+          </div>
+          <div
+            class="w-full h-72 p-4 flex flex-col border border-solid border-gray-900 rounded-lg"
+          >
+            <b class="text-xl font-bold">Vision</b>
+            <p>
+              We envision a future where Canada’s cultural sector thrives in a
+              data-fluent ecosystem, leveraging shared resources to enhance
+              cultural visibility, strengthen policy development, and support
+              equitable growth across communities. By embracing collaboration,
+              inclusivity, and innovation, we aim to position Canada as a global
+              leader in cultural analytics.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="w-full mx-auto">
+        <div class="px-4 mx-auto max-w-screen-xl lg:px-6">
+          <h2 class="mb-2 text-2xl tracking-tight font-bold text-gray-900">
+            Our Team
+          </h2>
+        </div>
+        <ul
+          role="list"
+          class="px-6 mx-auto my-8 max-w-screen-lg lg:px-6 grid gap-x-8 gap-y-12 sm:grid-cols-3 sm:gap-y-16 xl:col-span-2"
+        >
+          <Member name="Leslie Alexander" role="Co-Founder / CEO" />
+          <Member name="Michael Foster" role="Co-Founder / CTO" />
+          <Member name="Dries Vincent" role="Business Relations" />
+          <Member name="Lindsay Walton" role="Front-end Developer" />
+          <Member name="Courtney Henry" role="Designer" />
+          <Member name="Tom Cook" role="Director of Product" />
+          <Member name="Juan" role="President McAwesome" />
+          <Member name="Leslie Alexander" role="Co-Founder / CEO" />
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
