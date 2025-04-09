@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../layouts/base.astro";
+---
+
+<BaseLayout>
+  <main class="w-screen p-2">
+    <section class="w-full mx-auto">
+      <div class="px-4 mx-auto max-w-screen-xl lg:px-6">
+        <h1 class="mb-8 text-4xl tracking-tight font-bold text-gray-900">
+          Future Direction
+        </h1>
+        <h2 class="mb-2 text-2xl tracking-tight font-bold text-gray-900">
+          Overview
+        </h2>
+        <p class="mb-8 font-light">
+          Our next steps involve expanding the catalog’s reach and
+          functionality. With over 1,500 entries already compiled, our aim is to
+          include datasets from every province and territory in Canada. This
+          growth will be supported by partnerships with cultural organizations,
+          academic institutions, and policymakers. To enhance usability, we plan
+          to integrate rating and feedback mechanisms, allowing users to
+          evaluate datasets and provide input on their relevance and quality.
+        </p>
+        <p class="mb-8 font-light">
+          User research will play a critical role in validating our metadata
+          framework and interface design, with input from initiatives such the
+          Digital Data Service project in collaboration with Galeries Ontario
+          Galleries, OCADU Policy Hub, CDCE, and Heritage Canada.
+        </p>
+      </div>
+      <div class="px-4 mx-auto max-w-screen-xl lg:px-6">
+        <h2 class="mb-2 text-2xl tracking-tight font-bold text-gray-900">
+          Building an online platform
+        </h2>
+        <p class="mb-8 font-light">
+          The online platform will serve as the main channel for users to
+          explore and interact with the Canadian Cultural Data Catalogue. Users
+          can browse datasets using filters or advanced searches, view results
+          in list or card formats that highlight key metadata. The primary
+          features are:
+        </p>
+      </div>
+      <div
+        class="grid md:grid-cols-3 grid-cols-1 gap-8 py-8 px-4 mx-auto max-w-screen-xl lg:pb-16 lg:px-6"
+      >
+        <div class="w-full h-64 p-4 flex flex-col bg-gray-200">
+          <b class="text-xl font-bold">Search and Discovery</b>
+          <p>
+            Users can browse datasets through filters, which include a
+            comprehensive 37 categories of metadata, which include the URL link
+            to access the dataset in its original hosting.
+          </p>
+        </div>
+        <div class="w-full h-64 p-4 flex flex-col bg-gray-200">
+          <b class="text-xl font-bold">Data Visualization</b>
+          <p>
+            Users can explore the catalogue via visualized metadata to
+            understand relationships between datasets, identify data gaps, and
+            track dataset usage, providing an overview of the Canadian cultural
+            data ecosystem.
+          </p>
+        </div>
+        <div class="w-full h-64 p-4 flex flex-col bg-gray-200">
+          <b class="text-xl font-bold">Dataset Contributions</b>
+          <p>
+            Users can submit datasets they own or host. The platform guides them
+            in populating metadata for new entries and the input will be curated
+            by our team.
+          </p>
+        </div>
+        <div class="w-full h-64 p-4 flex flex-col bg-gray-200">
+          <b class="text-xl font-bold">Integration and Mapping</b>
+          <p>
+            Submitted datasets are added to the catalogue and mapped in relation
+            to existing entries.
+          </p>
+        </div>
+        <div class="w-full h-64 p-4 flex flex-col bg-gray-200">
+          <b class="text-xl font-bold">Review and Rating</b>
+          <p>
+            Users can evaluate datasets based on value, accuracy, and metadata
+            completeness. Feedback is consolidated into a points/stars system
+            for easy assessment, enhancing catalogue activity and quality.
+          </p>
+        </div>
+      </div>
+      <div class="px-4 mx-auto max-w-screen-xl lg:px-6 mb-4">
+        <img
+          src="/cultural-database-page/figures/user_flow.png"
+          alt="user flow"
+        />
+      </div>
+    </section>
+  </main>
+</BaseLayout>
