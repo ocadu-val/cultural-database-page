@@ -1,31 +1,62 @@
 <nav
-  class="flex flex-row justify-between items-center h-20 bg-slate-950 p-4 mb-4"
+  class="flex flex-row justify-between items-center h-20 bg-slate-950 p-4 mb-4 relative"
 >
-  <div class="text-gray-50 text-3xl font-bold ml-8">
+  <!-- Logo -->
+  <div class="text-gray-50 text-2xl sm:text-3xl font-bold ml-2 sm:ml-8">
     <a href="/cultural-database-page">OCAD U x synapse</a>
   </div>
-  <div class="text-gray-50 text-lg mr-8 h-full">
-    <ul class="flex flex-row gap-6 h-full items-center">
-      <li class="h-full flex items-center hover:text-pink-500">
+
+  <!-- Hamburger Button (mobile only) -->
+  <button
+    id="nav-toggle"
+    class="sm:hidden text-gray-50 focus:outline-none mr-2"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+    aria-controls="nav-menu"
+    type="button"
+  >
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+
+  <!-- Menu -->
+  <div
+    id="nav-menu"
+    class="hidden absolute top-20 left-0 w-full bg-slate-950 text-gray-50 z-50 transition-opacity duration-300 opacity-0 sm:static sm:block sm:w-auto sm:bg-transparent sm:opacity-100"
+    role="menu"
+    aria-labelledby="nav-toggle"
+  >
+    <ul
+      class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center py-4 sm:py-0"
+    >
+      <li class="flex items-center hover:text-pink-500">
         <a
           href="/cultural-database-page/about-us"
-          class="h-full flex items-center px-2"
+          class="flex items-center px-2"
+          role="menuitem"
         >
           About
         </a>
       </li>
-      <li class="h-full flex items-center hover:text-pink-500">
+      <li class="flex items-center hover:text-pink-500">
         <a
           href="/cultural-database-page/research"
-          class="h-full flex items-center px-2"
+          class="flex items-center px-2"
+          role="menuitem"
         >
           Research
         </a>
       </li>
-      <li class="h-full flex items-center hover:text-pink-500">
+      <li class="flex items-center hover:text-pink-500">
         <a
           href="/cultural-database-page/future-direction"
-          class="h-full flex items-center px-2"
+          class="flex items-center px-2"
+          role="menuitem"
         >
           Direction
         </a>
@@ -33,3 +64,75 @@
     </ul>
   </div>
 </nav>
+
+<script type="module">
+  const navToggle = document.getElementById("nav-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  const menuLinks = navMenu?.querySelectorAll("a");
+
+  function openMenu() {
+    navMenu?.classList.remove("hidden");
+    setTimeout(
+      () => navMenu?.classList.replace("opacity-0", "opacity-100"),
+      10,
+    );
+    navToggle?.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu() {
+    navMenu?.classList.replace("opacity-100", "opacity-0");
+    setTimeout(() => navMenu?.classList.add("hidden"), 300);
+    navToggle?.setAttribute("aria-expanded", "false");
+  }
+
+  function isMobile() {
+    return window.innerWidth < 640;
+  }
+
+  if (navToggle && navMenu && menuLinks) {
+    navToggle.addEventListener("click", () => {
+      const isHidden = navMenu.classList.contains("hidden");
+      if (isHidden) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    });
+
+    // Close menu when a link is clicked (mobile only)
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (isMobile()) {
+          closeMenu();
+        }
+      });
+    });
+
+    // Close menu when clicking outside (mobile only)
+    document.addEventListener("click", (e) => {
+      if (
+        isMobile() &&
+        navMenu &&
+        navToggle &&
+        e.target instanceof Node &&
+        !navMenu.contains(e.target) &&
+        !navToggle.contains(e.target) &&
+        !navMenu.classList.contains("hidden")
+      ) {
+        closeMenu();
+      }
+    });
+
+    // Update menu state on resize
+    window.addEventListener("resize", () => {
+      if (!navMenu) return;
+      if (window.innerWidth >= 640) {
+        navMenu.classList.remove("hidden", "opacity-0", "opacity-100");
+        navToggle.setAttribute("aria-expanded", "false");
+      } else {
+        navMenu.classList.add("hidden", "opacity-0");
+        navMenu.classList.remove("opacity-100");
+      }
+    });
+  }
+</script>
